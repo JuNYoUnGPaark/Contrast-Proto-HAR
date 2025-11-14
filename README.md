@@ -8,26 +8,7 @@ Activity Recognition".
 
 ## Model Architecture
 
-The proposed DL model combines CBAM-based denois
-ing, CrossFormer-based long-range temporal modeling, and a
-contrastive prototype-guided head. The overall architecture sequentially refines raw multi-channel signals into prototype-aligned representations. Starting
-from raw sequences $X \in \mathbb{R}^{B \times C \times T}$ , an input-embedding
-module first lifts the signals to a stable high-dimensional
-space using learnable 1D convolutions with normalization
-and activation, exposing local temporal patterns and inter-
-channel correlations to subsequent attention blocks. On top
-of this stem, a 1D CBAM suppresses sensor-specific noise
-and emphasizes informative channels and time segments prior
-to sequence modeling. The resulting feature map is optionally
-projected to a working width and then passed to the proposed
-Contrast-CrossFormer block. This block injects class-level
-priors by cross-attending to a learnable prototype bank, and
-further refines the sequence with self-attention and a feed-
-forward network, thereby shaping the embedding space to
-ward class-conditioned structure. A prototype-contrastive head
-subsequently enforces sample–prototype alignment via an In
-foNCE objective, while a lightweight classifier operating on
-temporally pooled features produces the final activity labels.
+Despite significant progress in sensor-based Human Activity Recognition (HAR), relying solely on a classification loss often results in a weakly constrained embedding geometry. This limitation makes it challenging to effectively separate look-alike activities and ultimately leads to performance degradation. To address this, we propose a novel Contrastive Prototype-Guided Framework that injects crucial class-level priors. Our method first applies channel- and temporal-attentive filtering to prioritize informative sequence regions. It then leverages a CrossFormer block to effectively capture long-range and multi-scale temporal dependencies. Finally, it aligns sample features with a learnable prototype bank using cross-attention coupled with a contrastive objective. By explicitly promoting sample–prototype consistency, the proposed framework produces more discriminative and compact activity representations. This not only leads to better robustness against typical wearable perturbations but also remains efficient for on-device deployment. The model achieves state-of-the-art results on four widely used public benchmarks, attaining F1 scores of 0.9881 (UCI-HAR), 0.9709 (PAMAP2), 0.9886 (MHEALTH), and 0.9910 (WISDM). Furthermore, the design is highly lightweight and real-time, featuring only 0.082M parameters, 5.7M FLOPs, and a 2 ms average inference time, fully supporting on-device deployment.
 
 ## Citing this Repository
 
