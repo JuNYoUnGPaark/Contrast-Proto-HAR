@@ -364,7 +364,7 @@ def parse_model_args():
                         help='Kernel size for Conv1d and temporal attention.')
     parser.add_argument('--dropout', type=float, default=0.1,
                         help='Dropout rate.')
-    parser.add_argument('--temperature', type=float, default=0.05,
+    parser.add_argument('--temperature', type=float, default=0.1,
                         help='Temperature for prototype contrast loss.')
     parser.add_argument('--disable_cbam', action='store_true',
                         help='Disable CBAM attention.')
@@ -417,5 +417,6 @@ if __name__ == "__main__":
     print(f"CE loss: {ce_loss.item():.4f}")
     print(f"Contrast loss: {con_loss.item():.4f}")
     print(f"Total loss: {total_loss.item():.4f}")
+
 
 
