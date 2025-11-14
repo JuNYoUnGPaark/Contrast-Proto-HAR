@@ -70,6 +70,7 @@ class CBAM1D(nn.Module):
     """
     def __init__(self, channels: int, reduction: int = 16, kernel_size: int = 7):
         super().__init__()
+        
         self.channel_att = ChannelAttention1D(channels, reduction=reduction)
         self.temporal_att = TemporalAttention1D(kernel_size=kernel_size)
 
@@ -416,3 +417,4 @@ if __name__ == "__main__":
     print(f"CE loss: {ce_loss.item():.4f}")
     print(f"Contrast loss: {con_loss.item():.4f}")
     print(f"Total loss: {total_loss.item():.4f}")
+
