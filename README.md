@@ -25,6 +25,10 @@ matplotlib==3.9.2
 seaborn==0.13.2
 fvcore==0.1.5.post20221221
 ```
+To install all required packages:
+```
+pip install -r requirements.txt
+```
 
 ## Codebase Overview
 - `model.py` - Implementation of the proposed Contrast-CrossFormer+CBAM architecture with prototype-guided contrastive head.
