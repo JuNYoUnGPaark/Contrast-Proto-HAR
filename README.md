@@ -12,7 +12,7 @@ Activity Recognition".
 The proposed DL model combines CBAM-based denois-
 ing, CrossFormer-based long-range temporal modeling, and a
 contrastive prototype-guided head. The overall architecture sequentially refines raw multi-channel signals into prototype-aligned representations. Starting
-from raw sequences X! ∈!RB×C×T , an input-embedding
+from raw sequences X \in \mathbb{R}^{B \times C \times T} , an input-embedding
 module first lifts the signals to a stable high-dimensional
 space using learnable 1D convolutions with normalization
 and activation, exposing local temporal patterns and inter-
