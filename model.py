@@ -372,7 +372,7 @@ def parse_model_args():
                         help='Disable CrossFormer (use TransformerEncoder instead).')
     parser.add_argument('--disable_contrast', action='store_true',
                         help='Disable contrastive prototype loss.')
-    parser.add_argument('--use_dim_reduction', action='store_False',
+    parser.add_argument('--use_dim_reduction', action='store_true',
                         help='Enable dimension reduction before attention.')
 
     args = parser.parse_args()
@@ -417,4 +417,5 @@ if __name__ == "__main__":
     print(f"CE loss: {ce_loss.item():.4f}")
     print(f"Contrast loss: {con_loss.item():.4f}")
     print(f"Total loss: {total_loss.item():.4f}")
+
 
