@@ -1,5 +1,4 @@
-# Contrastive Prototype–Guided CrossFormer for Sensor-Based Human
-Activity Recognition
+# Contrastive Prototype–Guided CrossFormer for Sensor-Based Human Activity Recognition
 
 <p align="center"><img src='./overall.png'></p>
 
