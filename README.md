@@ -9,7 +9,7 @@ Activity Recognition".
 
 ## Model Architecture
 
-The proposed DL model combines CBAM-based denois-
+The proposed DL model combines CBAM-based denois
 ing, CrossFormer-based long-range temporal modeling, and a
 contrastive prototype-guided head. The overall architecture sequentially refines raw multi-channel signals into prototype-aligned representations. Starting
 from raw sequences $X \in \mathbb{R}^{B \times C \times T}$ , an input-embedding
@@ -24,9 +24,9 @@ projected to a working width and then passed to the proposed
 Contrast-CrossFormer block. This block injects class-level
 priors by cross-attending to a learnable prototype bank, and
 further refines the sequence with self-attention and a feed-
-forward network, thereby shaping the embedding space to-
+forward network, thereby shaping the embedding space to
 ward class-conditioned structure. A prototype-contrastive head
-subsequently enforces sample–prototype alignment via an In-
+subsequently enforces sample–prototype alignment via an In
 foNCE objective, while a lightweight classifier operating on
 temporally pooled features produces the final activity labels.
 
